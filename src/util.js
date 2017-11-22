@@ -61,7 +61,7 @@ export default function UtilService($timeout, $q) {
     return str.replace(expression, match => match.toLowerCase() === value.toLowerCase() ? '<em>' + match + '</em>' : match);
   };
 
-  self.safeToString = value => angular.isUndefined(value) || value === null ? '' : value.toString().trim();
+  self.safeToString = value => angular.isUndefined(value) || value === null ? '' : value.toString();
 
   self.encodeHTML = value => self.safeToString(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
